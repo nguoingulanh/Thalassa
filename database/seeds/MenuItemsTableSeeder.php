@@ -173,5 +173,87 @@ class MenuItemsTableSeeder extends Seeder
                 'order'      => 14,
             ])->save();
         }
+
+        $thalassa = Menu::where('name', 'menu-thalassa')->firstOrFail();
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $thalassa->id,
+            'title'   => 'Hydrotherapy',
+            'url'     => '/category/hydrotherapy',
+            'route'   => null,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 18,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $thalassa->id,
+            'title'   => 'Algotherapy',
+            'url'     => '/category/algotherapy',
+            'route'   => null,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 19,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $thalassa->id,
+            'title'   => 'Physiotherapy',
+            'url'     => '/category/physiotherapy',
+            'route'   => null,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 20,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $thalassa->id,
+            'title'   => 'Aqua Exercise',
+            'url'     => '/category/aqua-exercise',
+            'route'   => null,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 21,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $thalassa->id,
+            'title'   => 'Underwater Massage',
+            'url'     => '/category/underwater-massage',
+            'route'   => null,
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => '#000000',
+                'parent_id'  => null,
+                'order'      => 22,
+            ])->save();
+        }
     }
 }
