@@ -8,5 +8,11 @@
 - Step 6: run `php artisan db:seed`
 - Step 7: run `php artisan storage:link`
 - Step 8: run `php artisan serve`
+
+##User demo
+- Admin: admin@admin.com / password
+- Member: user@gmail.com / 123456 . member@gmail.com / 123456
+
+##Document
 - [Documention Laravel](https://laravel.com/docs/6.x)
 - [Documention Voyager](https://voyager-docs.devdojo.com/)

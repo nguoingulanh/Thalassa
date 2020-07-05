@@ -21,9 +21,9 @@
                                     </a>
                                     <div class="info">
                                         <h3><a href="{{route('product.detail',$product['slug'])}}">{{$product['name']}}</a></h3>
-                                        <div class="des">{{$product['description']}}
+                                        <div class="des">{!! $product['description'] !!}
                                         </div>
-                                        <div class="price">${{$product['price']}} / 1 hour</div>
+                                        <div class="price">{{$product['price']}}$</div>
                                     </div>
                                 </div>
                             </li>

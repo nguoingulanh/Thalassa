@@ -12,7 +12,7 @@
         <div class="container">
             <h1 class="section-title">{{$product['name']}}</h1>
             <div class="content-text">
-                {{$product['content']}}
+                {!! $product['content'] !!}
             </div>
         </div>
     </main>
