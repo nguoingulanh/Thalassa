@@ -12,7 +12,7 @@ class Product extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['id', 'id_sub_category', 'name', 'slug', 'image', 'description', 'content', 'price'];
-    protected $translatable = ['description','content'];
+    protected $translatable = ['name','description','content'];
 
     public function idSubCategory()
     {

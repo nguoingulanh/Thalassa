@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Translatable;
 
 class CategoryProduct extends Model
 {
     //
+    use Translatable;
     protected $table = 'category_product';
     protected $primaryKey = 'id';
 
     protected $fillable = ['id', 'parent_id', 'name', 'slug', 'image'];
+    protected $translatable = ['name'];
 
     public function categories()
     {

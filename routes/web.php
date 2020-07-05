@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/login', 'LoginController@login')->name('customer.login');
 Route::post('/login', 'LoginController@handleLogin')->name('customer.post.login');
 Route::prefix('/')->middleware(['customer'])->group(function () {
@@ -23,6 +25,8 @@ Route::prefix('/')->middleware(['customer'])->group(function () {
     Route::get('/cart/update','WebsiteController@getUpdateCart');
     Route::delete('/cart/delete/{id}','WebsiteController@deleteCart')->name('delete.cart');
     Route::get('/logout', 'LoginController@logout')->name('customer.logout');
+
+    Route::get('change-language/{slug}', 'WebsiteController@changeLanguage')->name('change-language');
 });
 
 

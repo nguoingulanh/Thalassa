@@ -14,7 +14,7 @@
                     <li>
                         <a href="{{route('sub-category.get',$cate['slug'])}}" class="cat-item image-fit">
                             <img src="{{asset('storage/'.$cate['image'])}}" alt="">
-                            <h3>{{$cate['name']}}</h3>
+                            <h3>{{$cate->getTranslatedAttribute('name')}}</h3>
                         </a>
                     </li>
                     @endforeach

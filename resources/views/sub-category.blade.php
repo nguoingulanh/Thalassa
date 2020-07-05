@@ -7,9 +7,9 @@
                 <a href="{{route('category.get')}}">Home</a> <img src="{{asset('assets/images/arrow-right.png')}}" alt="">
                 <a href="{{route('category.get')}}">Categories</a> <img src="{{asset('assets/images/arrow-right.png')}}"
                                                                         alt="">
-                <span>{{$title}}</span>
+                <span>{{$category->getTranslatedAttribute('name')}}</span>
             </div>
-            <h2 class="section-title">{{$title}}</h2>
+            <h2 class="section-title">{{$category->getTranslatedAttribute('name')}}</h2>
             <ul class="list-inline catsub-list text-center">
                 @if(count($subcate) > 0)
                     @foreach($subcate as $sub)
@@ -18,7 +18,7 @@
                                 <div class="image">
                                     <img src="{{asset('storage/'.$sub['image'])}}" alt="">
                                 </div>
-                                {{$sub['name']}}
+                                {{$sub->getTranslatedAttribute('name')}}
                             </a>
                         </li>
                     @endforeach

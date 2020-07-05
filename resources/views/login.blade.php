@@ -28,10 +28,16 @@
 <footer id="footer" class="footer-login text-center">
     <div class="container">
         <div class="languages text-left">
-            <a href="" class="current"><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a>
+            @if(session('lang') == 'fr')
+                <a href="" class="current"><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a>
+            @else
+                <a href="" class="current"><img src="{{asset('assets/images/en.jpg')}}" alt=""> England</a>
+            @endif
             <ul>
-                <li><a href=""><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a></li>
-                <li><a href=""><img src="{{asset('assets/images/en.jpg')}}" alt=""> England</a></li>
+                <li><a href="{{route('change-language', 'fr') }}"><img src="{{asset('assets/images/fr.png')}}" alt="">
+                        Francais</a></li>
+                <li><a href="{{ route('change-language', 'en') }}"><img src="{{asset('assets/images/en.jpg')}}" alt="">
+                        England</a></li>
             </ul>
         </div>
         <div class="copyright">© 2020 Thalassa Concept. All rights reserved.</div>

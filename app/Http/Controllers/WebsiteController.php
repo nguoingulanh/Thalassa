@@ -8,10 +8,16 @@ use App\Models\CategoryProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class WebsiteController extends Controller
 {
     //
+
+    private $langActive = [
+        'fr',
+        'en',
+    ];
     public function category()
     {
         $category = CategoryProduct::where('parent_id', null)->get();
@@ -27,7 +33,7 @@ class WebsiteController extends Controller
         $subcate = $category->categories()->get();
 
         return view('sub-category', [
-            'title' => $category->name
+            'category' => $category
         ], compact('subcate'));
     }
 
@@ -111,6 +117,22 @@ class WebsiteController extends Controller
     {
         if (Auth::check()) {
             return Auth::user()->Cart()->get();
+        }
+    }
+
+    public function changeLanguage(Request $request,$slug)
+    {
+        if ($slug == 'fr'){
+            if (in_array($slug, $this->langActive)) {
+                $request->session()->put(['lang' => $slug]);
+                return redirect()->back();
+            }
+        }
+        if ($slug == 'en'){
+            if (in_array($slug, $this->langActive)) {
+                $request->session()->put(['lang' => $slug]);
+                return redirect()->back();
+            }
         }
     }
 }

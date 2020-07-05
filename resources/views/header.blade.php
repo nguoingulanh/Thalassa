@@ -5,7 +5,8 @@
                 <a href="" class="toggle-menu"><img src="{{asset('assets/images/menu.png')}}" alt=""></a>
                 <a href="{{route('category.get')}}" class="logo"><img src="{{asset('assets/images/logo.png')}}" alt=""></a>
                 <div class="header-right">
-                    <a href="{{route('getCart')}}" class="toggle-cars relative-section"><img src="{{asset('assets/images/cart-icon.png')}}" alt=""><span>{{count($cart)}}</span></a>
+                    <a href="{{route('getCart')}}" class="toggle-cars relative-section"><img
+                            src="{{asset('assets/images/cart-icon.png')}}" alt=""><span>{{count($cart)}}</span></a>
                 </div>
             </div>
         </div>
@@ -16,10 +17,16 @@
     <div class="menu-inner">
         <a href="" class="menu-close"><img src="{{asset('assets/images/menu-close.png')}}" alt=""></a>
         <div class="languages text-left">
-            <a href="" class="current"><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a>
+            @if(session('lang') == 'fr')
+                <a href="" class="current"><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a>
+            @else
+                <a href="" class="current"><img src="{{asset('assets/images/en.jpg')}}" alt=""> England</a>
+            @endif
             <ul>
-                <li><a href=""><img src="{{asset('assets/images/fr.png')}}" alt=""> Francais</a></li>
-                <li><a href=""><img src="{{asset('assets/images/en.jpg')}}" alt=""> England</a></li>
+                <li><a href="{{route('change-language', 'fr') }}"><img src="{{asset('assets/images/fr.png')}}" alt="">
+                        Francais</a></li>
+                <li><a href="{{ route('change-language', 'en') }}"><img src="{{asset('assets/images/en.jpg')}}" alt="">
+                        England</a></li>
             </ul>
         </div>
         <ul class="menu-main">
@@ -28,7 +35,7 @@
                 <a href="">Categories</a>
                 <ul class="sub-menu">
                     <?php
-                        echo menu('menu-thalassa')
+                    echo menu('menu-thalassa')
                     ?>
                 </ul>
             </li>

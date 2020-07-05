@@ -17,7 +17,7 @@
                             <div class="relative-section">
                                 <a href="" class="image-fit"><img src="{{asset('storage/'.json_decode($value->idProduct->image)[0])}}" alt=""></a>
                                 <div class="info relative-section">
-                                    <h3><a href="">{{$value->idProduct->name}}</a></h3>
+                                    <h3><a href="">{{ $value->idProduct->getTranslatedAttribute('name')}}</a></h3>
                                     <div class=" relative-section">
                                         <input type="number" name="" onchange="updateCart(this.value,'{{$value->id}}')" value="{{$value->quantity}}" min="1" class="form-control w-75">
                                     </div>

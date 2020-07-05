@@ -10,9 +10,9 @@
     </div>
     <main id="content" class="globale-content">
         <div class="container">
-            <h1 class="section-title">{{$product['name']}}</h1>
+            <h1 class="section-title">{{$product->getTranslatedAttribute('name')}}</h1>
             <div class="content-text">
-                {!! $product['content'] !!}
+                {!! $product->getTranslatedAttribute('content') !!}
             </div>
         </div>
     </main>

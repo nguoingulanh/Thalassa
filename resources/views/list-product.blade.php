@@ -20,8 +20,8 @@
                                         <img src="{{asset('storage/'.json_decode($product['image'])[0])}}" alt="">
                                     </a>
                                     <div class="info">
-                                        <h3><a href="{{route('product.detail',$product['slug'])}}">{{$product['name']}}</a></h3>
-                                        <div class="des">{!! $product['description'] !!}
+                                        <h3><a href="{{route('product.detail',$product['slug'])}}">{{$product->getTranslatedAttribute('name')}}</a></h3>
+                                        <div class="des">{!! $product->getTranslatedAttribute('description')!!}
                                         </div>
                                         <div class="price">{{$product['price']}}$</div>
                                     </div>
